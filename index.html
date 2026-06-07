@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sons da Casa - Canções Personalizadas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🎵 Sons da Casa</h1>
+                <p class="subtitle">Canções feitas por medida para você</p>
+            </div>
+            <nav>
+                <a href="#montra" class="nav-link">Exemplos</a>
+                <a href="#formulario" class="nav-link">Fazer Pedido</a>
+                <a href="admin.html" class="nav-link admin-btn">Gestão</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Crie sua canção personalizada</h2>
+            <p>Conte-nos sua história e transforme-a numa canção única, feita especialmente para você</p>
+        </div>
+    </section>
+
+    <section id="montra" class="montra">
+        <div class="container">
+            <h2>Ouça Alguns Exemplos</h2>
+            <p class="info-text">Exemplos de canções criadas pela Sons da Casa (máximo 15 segundos)</p>
+            <div id="songs-grid" class="songs-grid">
+            </div>
+        </div>
+    </section>
+
+    <section id="formulario" class="form-section">
+        <div class="container">
+            <h2>Faça seu Pedido</h2>
+            <form id="order-form" class="order-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="tema">Tema/Ocasião *</label>
+                        <input type="text" id="tema" name="tema" placeholder="Ex: Aniversário, Casamento..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="genero">Género Musical Preferido *</label>
+                        <select id="genero" name="genero" required>
+                            <option value="">Selecione um género</option>
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="fado">Fado</option>
+                            <option value="samba">Samba</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="classico">Clássico</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duracao">Duração Preferida *</label>
+                        <select id="duracao" name="duracao" required>
+                            <option value="">Selecione duração</option>
+                            <option value="30">30 segundos</option>
+                            <option value="60">1 minuto</option>
+                            <option value="120">2 minutos</option>
+                            <option value="180">3 minutos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descreva sua história/pedido *</label>
+                    <textarea id="descricao" name="descricao" rows="6" placeholder="Conte-nos o que gostaria que a canção expressasse..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="nomes">Nomes ou Pessoas Especiais (separadas por vírgula)</label>
+                    <input type="text" id="nomes" name="nomes" placeholder="Ex: João, Maria, avó...">
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Pedido</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sons da Casa. Todos os direitos reservados.</p>
+            <p>📧 <a href="mailto:sonsdacasa@gmail.com">sonsdacasa@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

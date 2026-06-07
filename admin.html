@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão - Sons da Casa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal active">
+        <div class="modal-content">
+            <h1>🎵 Sons da Casa</h1>
+            <h2>Acesso à Gestão</h2>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="sonsdacasa@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" placeholder="Introduza a password" required>
+                </div>
+                <button type="submit" class="btn-submit">Entrar</button>
+            </form>
+            <div id="login-message" class="form-message"></div>
+            <p class="back-link"><a href="index.html">← Voltar à página principal</a></p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-dashboard hidden">
+        <header class="admin-header">
+            <div class="container">
+                <div class="header-left">
+                    <h1>📊 Gestão - Sons da Casa</h1>
+                </div>
+                <div class="header-right">
+                    <span id="user-info" class="user-info"></span>
+                    <button id="logout-btn" class="btn-secondary">Sair</button>
+                    <a href="index.html" class="btn-secondary">← Página Pública</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container admin-container">
+            <nav class="admin-nav">
+                <button class="nav-tab active" data-tab="pedidos">📋 Pedidos</button>
+                <button class="nav-tab" data-tab="canções">🎵 Canções</button>
+                <button class="nav-tab" data-tab="estatisticas">📈 Estatísticas</button>
+                <button class="nav-tab" data-tab="paginas">⚙️ Páginas</button>
+            </nav>
+
+            <!-- TAB: Pedidos -->
+            <section id="pedidos-tab" class="tab-content active">
+                <h2>Pedidos Recebidos</h2>
+                <div id="orders-list" class="orders-list">
+                </div>
+                <div id="no-orders" class="empty-state">
+                    <p>Nenhum pedido recebido ainda</p>
+                </div>
+            </section>
+
+            <!-- TAB: Canções -->
+            <section id="canções-tab" class="tab-content">
+                <h2>Gestão de Canções Exemplos</h2>
+                
+                <div class="form-section">
+                    <h3>Adicionar Nova Canção</h3>
+                    <form id="add-song-form" class="form-inline">
+                        <div class="form-group">
+                            <label for="song-name">Nome da Canção *</label>
+                            <input type="text" id="song-name" placeholder="Ex: Aniversário da Sofia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="song-description">Descrição *</label>
+                            <input type="text" id="song-description" placeholder="Breve descrição" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="song-url">Link Google Drive *</label>
+                            <input type="url" id="song-url" placeholder="https://drive.google.com/file/d/..." required>
+                        </div>
+                        <button type="submit" class="btn-submit">Adicionar Canção</button>
+                    </form>
+                </div>
+
+                <div class="songs-management">
+                    <h3>Canções Exemplos Atuais</h3>
+                    <div id="songs-list" class="songs-list">
+                    </div>
+                    <div id="no-songs" class="empty-state">
+                        <p>Nenhuma canção adicionada ainda</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Estatísticas -->
+            <section id="estatisticas-tab" class="tab-content">
+                <h2>Estatísticas</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total de Pedidos</h3>
+                        <p class="stat-number" id="total-orders">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Géneros Populares</h3>
+                        <div id="genres-chart" class="chart">
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Ocasiões Populares</h3>
+                        <div id="occasions-chart" class="chart">
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Durações Solicitadas</h3>
+                        <div id="duration-chart" class="chart">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Páginas -->
+            <section id="paginas-tab" class="tab-content">
+                <h2>Edição de Páginas</h2>
+                
+                <div class="pages-section">
+                    <h3>Editar Página Principal</h3>
+                    <form id="edit-homepage" class="form-section">
+                        <div class="form-group">
+                            <label for="hero-title">Título Principal</label>
+                            <input type="text" id="hero-title" placeholder="Crie sua canção personalizada">
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-subtitle">Subtítulo</label>
+                            <textarea id="hero-subtitle" rows="2" placeholder="Conte-nos sua história..."></textarea>
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="alert('Funcionalidade em desenvolvimento')">Guardar Alterações</button>
+                    </form>
+                </div>
+
+                <div class="pages-section">
+                    <h3>Informações de Contacto</h3>
+                    <form id="edit-contact" class="form-section">
+                        <div class="form-group">
+                            <label for="email-contact">Email de Contacto</label>
+                            <input type="email" id="email-contact" value="sonsdacasa@gmail.com">
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="alert('Funcionalidade em desenvolvimento')">Guardar Alterações</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
